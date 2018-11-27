@@ -1,9 +1,9 @@
 <template>
   <div>
     <h2>Form input</h2>
-    <label><input type="checkbox" value="1" v-model="puncts"> 1</label>
-    <label><input type="checkbox" value="2" v-model="puncts"> 2</label>
-    <label><input type="checkbox" value="3" v-model="puncts"> 3</label>
+    <label><input type="radio" value="1" v-model="puncts"> 1</label>
+    <label><input type="radio" value="2" v-model="puncts"> 2</label>
+    <label><input type="radio" value="3" v-model="puncts"> 3</label>
     <hr>
     <ul>
       <li v-for="punct of puncts">{{punct}}</li>
@@ -16,7 +16,7 @@
   export default {
     data() {
       return {
-        puncts: ['1']
+        puncts: '1'
       }
     }
   }
