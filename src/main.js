@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Car from "./Car";
+//import Car from "./Car";
 
-Vue.component('app-car', Car);
+//Vue.component('app-car', Car);
 
 new Vue({
   el: '#app',

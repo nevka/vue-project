@@ -7,15 +7,19 @@
 
 
 <script>
+  import Car from './Car.vue';
 
-export default {
-  name: 'app',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
+  export default {
+    name: 'app',
+    data() {
+      return {
+        msg: 'Welcome to Your Vue.js App'
+      }
+    },
+    components: {
+      appCar: Car
     }
   }
-}
 </script>
 
 <style>
