@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h2 v-colored:background="'green'">{{title}}</h2>
-    <h2 v-colored:color="'red'">{{title}}</h2>
+    <h2 v-colored:background.font="'green'">{{title}}</h2>
+    <h2 v-colored:color.font.delay="'red'">{{title}}</h2>
   </div>
 </template>
 
