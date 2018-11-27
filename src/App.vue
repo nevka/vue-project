@@ -21,6 +21,14 @@
         <div class="invalid-feedback" v-if="!$v.confirmPassword.sameAs">Пароль не совпадает</div>
       </div>
 
+      <div class="form-group">
+        <label for="emailAsync">Email асинхронный</label>
+        <input type="email" id="emailAsync" class="form-control" @blur="$v.emailAsync.$touch()" v-model="emailAsync" :class="{'is-invalid': $v.emailAsync.$error}">
+        <div class="invalid-feedback" v-if="!$v.emailAsync.required">Поле не заполнено</div>
+        <div class="invalid-feedback" v-if="!$v.emailAsync.email">Неверный Email</div>
+        <div class="invalid-feedback" v-if="!$v.emailAsync.uniqEmail">Неуникальный Email</div>
+      </div>
+
     </form>
   </div>
 </template>
@@ -34,7 +42,8 @@
       return {
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        emailAsync: ''
       }
     },
     validations: {
@@ -50,6 +59,20 @@
         sameAs: sameAs((vue) => {
           return vue.password;
         })
+      },
+      emailAsync: {
+        required,
+        email,
+        uniqEmail: function (newEmail) {
+          //return newEmail !== '12@mail.ru';
+          if(newEmail === '') return true;
+          return new Promise((resolve, rejest) => {
+            setTimeout(() => {
+              const value = newEmail !== '12@mail.ru';
+              resolve(value)
+            }, 3000)
+          });
+        }
       }
     }
   }
