@@ -1,25 +1,25 @@
 <template>
   <div>
     <h2>Form input</h2>
-    <input type="text" v-model.number="age">
-    <hr>
-    <p>{{age}}</p>
+    <app-onoff v-model="switched"></app-onoff>
+    <div>
+      <h3 v-if="switched">is enabled</h3>
+      <h3 v-else>is disabled</h3>
+    </div>
   </div>
 </template>
 
 
 <script>
+  import Onoff from './Onoff.vue';
   export default {
     data() {
       return {
-          age: 20
+        switched: false
       }
     },
-    watch: {
-      age(value) {
-        console.log(value);
-        console.log(typeof value);
-      }
+    components: {
+      appOnoff: Onoff
     }
   }
 </script>
