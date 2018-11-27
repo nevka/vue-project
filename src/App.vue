@@ -1,15 +1,9 @@
 <template>
   <div>
     <h2>Form input</h2>
-    <select>
-      <option v-for="punct of puncts" :selected="punct === defaultPunct">{{punct}}</option>
-    </select>
-
-    <select v-model="defaultPunct2">
-      <option v-for="punct of puncts">{{punct}}</option>
-    </select>
+    <input type="text" v-model.number="age">
     <hr>
-    <p>{{defaultPunct2}}</p>
+    <p>{{age}}</p>
   </div>
 </template>
 
@@ -18,20 +12,18 @@
   export default {
     data() {
       return {
-        defaultPunct: '2',
-        defaultPunct2: '3',
-        puncts: ['1', '2', '3']
+          age: 20
+      }
+    },
+    watch: {
+      age(value) {
+        console.log(value);
+        console.log(typeof value);
       }
     }
   }
 </script>
 
 <style scoped>
-  textarea{
-    height: 100px;
-    width: 300px;
-  }
-  p{
-    white-space: pre;
-  }
+
 </style>
