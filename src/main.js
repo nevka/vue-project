@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
-import ColorDirective from './color'
 
-Vue.directive('colored', ColorDirective); // глобальные директивы для всего проекта
+/*Vue.filter('uppercase', (value) => {
+  return value.toUpperCase();
+});*/
+Vue.filter('uppercase', value => value.toUpperCase());
 
 new Vue({
   el: '#app',
