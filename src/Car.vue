@@ -1,7 +1,10 @@
 <template>
   <div>
-    <h2>Car</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae corporis deserunt dolorem, eligendi error, esse est fugit impedit incidunt ipsam magni, molestiae quasi quod reiciendis reprehenderit saepe similique totam voluptate?50</p>
+    <slot></slot>
+    <hr>
+    <slot name="title"></slot>
+    <hr>
+    <slot name="text"></slot>
   </div>
 </template>
 
@@ -11,10 +14,13 @@
   }
 </script>
 
-<style>
+<style scoped>
   div{
     border: 1px solid black;
     padding: 10px 20px;
     margin: 20px;
+  }
+  h2{
+    color: red;
   }
 </style>
