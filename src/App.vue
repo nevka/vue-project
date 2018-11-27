@@ -1,8 +1,13 @@
 <template>
- <h1>{{msg}}</h1>
+  <div>
+    <h1>{{msg}}</h1>
+    <app-car></app-car>
+  </div>
 </template>
 
+
 <script>
+
 export default {
   name: 'app',
   data () {
