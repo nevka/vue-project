@@ -4,10 +4,11 @@
     <form class="pt-3">
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" class="form-control" @blur="$v.email.$touch()" v-model="email">
+        <input type="email" id="email" class="form-control" @blur="$v.email.$touch()" v-model="email" :class="{'is-invalid': $v.email.$error}">
+        <div class="invalid-feedback" v-if="!$v.email.required">Поле не заполнено</div>
+        <div class="invalid-feedback" v-if="!$v.email.email">Неверный Email</div>
       </div>
 
-      <pre>{{$v.email}}</pre>
     </form>
   </div>
 </template>
