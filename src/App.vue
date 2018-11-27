@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h2 v-colored v-if="visible">{{title}}</h2>
-    <button @click="visible=!visible">Toggle</button>
-    <button @click="title='New title'">Toggle</button>
+    <h2 v-colored="'green'">{{title}}</h2>
   </div>
 </template>
 
@@ -11,8 +9,7 @@
   export default {
     data() {
       return {
-          title: 'Hello',
-          visible: true
+          title: 'Hello'
       }
     }
   }
