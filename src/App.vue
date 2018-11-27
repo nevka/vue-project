@@ -1,13 +1,15 @@
 <template>
   <div>
     <h2>Form input</h2>
-    <label><input type="radio" value="1" v-model="puncts"> 1</label>
-    <label><input type="radio" value="2" v-model="puncts"> 2</label>
-    <label><input type="radio" value="3" v-model="puncts"> 3</label>
+    <select>
+      <option v-for="punct of puncts" :selected="punct === defaultPunct">{{punct}}</option>
+    </select>
+
+    <select v-model="defaultPunct2">
+      <option v-for="punct of puncts">{{punct}}</option>
+    </select>
     <hr>
-    <ul>
-      <li v-for="punct of puncts">{{punct}}</li>
-    </ul>
+    <p>{{defaultPunct2}}</p>
   </div>
 </template>
 
@@ -16,7 +18,9 @@
   export default {
     data() {
       return {
-        puncts: '1'
+        defaultPunct: '2',
+        defaultPunct2: '3',
+        puncts: ['1', '2', '3']
       }
     }
   }
