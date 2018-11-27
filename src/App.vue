@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Parent: {{carName}}</h1>
-    <app-car :carName="carName" :carYear="carYear" @nameChange="carName= $event"></app-car>
+    <app-car :carName="carName" :carYear="carYear" :changeFunc="changeNameToAudi" @nameChange="carName= $event"></app-car>
   </div>
 </template>
 
@@ -15,6 +15,11 @@
       return {
         carName: 'Ford',
         carYear: 2012
+      }
+    },
+    methods: {
+      changeNameToAudi() {
+        this.carName = 'Audi';
       }
     },
     components: {
