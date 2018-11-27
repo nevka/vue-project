@@ -2,27 +2,28 @@
   <div class="car">
     <h3>Name: {{carName}} / {{reverseName}}</h3>
     <p>Year: {{carYear}}</p>
+    <p><button @click="changeName">Click</button></p>
   </div>
 </template>
 
 <script>
   export default {
-    //props: ['carName', 'carYear'],
-    /*props: {
-        carName: String,
-        carYear: Number,
-    },*/
     props: {
       carName: {
         type: String,
-        request: true,
         default: 'Default name'
       },
       carYear: Number,
     },
+    methods: {
+      changeName() {
+        this.carName = 'Mazda';
+        this.$emit('nameChange', this.carName);
+      }
+    },
     computed: {
       reverseName(){
-          return this.carName.split('').reverse().join('');
+        return this.carName.split('').reverse().join('');
       }
     },
     data() {
