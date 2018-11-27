@@ -1,8 +1,13 @@
 <template>
   <div>
     <h2>Form input</h2>
-    <textarea v-model="textarea"></textarea>
-    <p>{{textarea}}</p>
+    <label><input type="checkbox" value="1" v-model="puncts"> 1</label>
+    <label><input type="checkbox" value="2" v-model="puncts"> 2</label>
+    <label><input type="checkbox" value="3" v-model="puncts"> 3</label>
+    <hr>
+    <ul>
+      <li v-for="punct of puncts">{{punct}}</li>
+    </ul>
   </div>
 </template>
 
@@ -11,7 +16,7 @@
   export default {
     data() {
       return {
-        textarea: 'I am textarea'
+        puncts: ['1']
       }
     }
   }
