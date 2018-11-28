@@ -26,5 +26,19 @@ export default new VueRouter ({
             ]
         }
     ],
-    mode: 'history'
+    mode: 'history',
+    scrollBehavior(to, from, savePosition) {
+        if(savePosition)   {
+            return savePosition;
+        }
+
+        if(to.hash) {
+            return {selector: to.hash};
+        }
+
+        return {
+            x: 0,
+            y: 0
+        }
+    }
 });
