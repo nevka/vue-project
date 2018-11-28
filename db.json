@@ -9,6 +9,16 @@
       "name": "Audi",
       "year": 2018,
       "id": 2
+    },
+    {
+      "name": "Mazda",
+      "year": 2014,
+      "id": 3
+    },
+    {
+      "name": "Mazda",
+      "year": 2014,
+      "id": 4
     }
   ]
 }
