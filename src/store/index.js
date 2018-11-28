@@ -13,7 +13,7 @@ export default new Vuex.Store({
         }
     },
     getters: {
-        computedCounter(state, payload) {
+        computedCounter(state) {
             return state.counter * 25;
         }
     }
