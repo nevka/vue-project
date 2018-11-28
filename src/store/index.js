@@ -7,8 +7,13 @@ export default new Vuex.Store({
     state: {
         counter: 0
     },
+    mutations: {
+        changeCounter (state, payload) {
+            state.counter += payload
+        }
+    },
     getters: {
-        computedCounter(state) {
+        computedCounter(state, payload) {
             return state.counter * 25;
         }
     }
