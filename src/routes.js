@@ -23,7 +23,16 @@ export default new VueRouter ({
                 {
                     path: 'full', // http://localhost:8080/car/:id/full
                     component: CarFull,
-                    name: 'carFull'
+                    name: 'carFull',
+                    beforeEnter(to, from, next) {
+                        /*if(true) {
+                            next(true);
+                        }
+                        else {
+                            next(false);
+                        }*/
+                        next();
+                    }
                 }
             ]
         },

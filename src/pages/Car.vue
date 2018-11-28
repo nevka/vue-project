@@ -28,6 +28,14 @@
       $route(toR, fromR) {
         this.id = toR.params['id'];
       }
+    },
+    beforeRouteLeave(to, from, next) {
+      if(window.confirm('to leave')) {
+        next(true);
+      }
+      else {
+        next(false);
+      }
     }
   }
 </script>
