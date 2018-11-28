@@ -4,7 +4,7 @@
     <button class="btn btn-sm btn-defaul mb-2" @click="goBackToCars">Back</button>
     <br>
     <!--<router-link class="btn btn-info mt-2" tag="button" :to="'/car/'+id+'/full'">Full info</router-link>-->
-    <router-link class="btn btn-info mt-2" tag="button" :to="{name: 'carFull', params: {id: id}}">Full info</router-link>
+    <router-link class="btn btn-info mt-2" tag="button" :to="{name: 'carFull', params: {id: id}, query: {name: 'Mazda', year: 2011}}">Full info</router-link>
 
     <hr>
     <router-view></router-view>
