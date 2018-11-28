@@ -1,9 +1,6 @@
 <template>
-  <div class="cotainer">
-    <router-view></router-view>
-  </div>
+  <h1>Home.vue</h1>
 </template>
-
 
 <script>
   export default {
